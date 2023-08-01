@@ -1,10 +1,11 @@
 import React from "react"
 import { Nav, Navbar, NavLink, NavItem, Container, Row, Col } from "react-bootstrap"
 import { Link } from "react-router-dom"
+import './Custom.css';
 
 const Navigationbar = () => {
   return (
-    <div>
+    <>
       <div
         style={{
           backgroundColor: "#212529",
@@ -14,7 +15,7 @@ const Navigationbar = () => {
           width: "100%",
           textAlign: "center",
         }}>
-        <Container fluid>
+        <Container>
           <Row>
             <Col>
               <h1>Dungeons and Dragons 3.5e</h1>
@@ -23,6 +24,7 @@ const Navigationbar = () => {
           </Row>
         </Container>
       </div>
+    
       <Navbar
         collapseOnSelect
         expand="sm"
@@ -32,9 +34,10 @@ const Navigationbar = () => {
               <Navbar.Toggle
                 aria-controls="navbarScroll"
                 data-bs-target="#navbarScroll"
+                style={{width:"100%",}}
               />
               <Navbar.Collapse id="navbarScroll">
-                <Nav justify variant="tabs">
+                <Nav style={{width:"100%", fontSize:"20px"}} justify variant="tabs" defaultActiveKey="/Character">
                   <NavItem>
                     <NavLink
                       eventKey="1"
@@ -70,7 +73,7 @@ const Navigationbar = () => {
                 </Nav>
               </Navbar.Collapse>
       </Navbar>
-    </div>
+</>
   )
 }
 

@@ -1,0 +1,4 @@
+.navbar .nav-tabs .nav-link.active {
+    background-color: lightgrey;
+    color:black;
+  }
