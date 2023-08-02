@@ -2,3 +2,12 @@
     background-color: lightgrey;
     color:black;
   }
+.border-component{
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ccc;
+  border-radius: 5px;
+  padding:10px;
+  height:100%;
+  margin-bottom: 10px;
+}
