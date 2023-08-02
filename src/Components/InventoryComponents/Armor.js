@@ -1,33 +1,26 @@
 import React, { useState } from "react"
-import { Form, Container, Row, Col, Collapse } from "react-bootstrap"
+import { Form, Container, Row, Col} from "react-bootstrap"
 import "./Inventory.css"
 
 
 //Function to handle the collapseability of each weapon in main component
 //Accept weaponName as prop and establish
 
-const InvWeapons = ({weaponName}) => {
-    //Collapse function!
-  const [open, setOpen] = useState(false)
-
-  const handleCollapse = () => {
-    setOpen((prevOpen) => !prevOpen)
-  }
-
-  const [weapons, setWeapons] = useState({
-    attack: "",
-    bonus: "",
-    damage: "",
-    critical: "",
-    range: "",
-    type: "",
-    notes: "",
-    ammunition: "",
-    ammunitioncap: "",
+const InvArmor = () => {
+  const [armor, setArmor] = useState({
+    armorname: "",
+    armortype: "",
+    acbonus: "",
+    maxdex: "",
+    checkpenalty: "",
+    spellfailure: "",
+    speed: "",
+    weight: "",
+    specialproperties: "",
   })
   const handleInputChange = (event) => {
     const { name, value } = event.target
-    setWeapons((prevAttributes) => ({
+    setArmor((prevAttributes) => ({
       ...prevAttributes,
       [name]: value,
     }))
@@ -35,12 +28,8 @@ const InvWeapons = ({weaponName}) => {
 
   return (
     <>
+
       <div className="border-weapons">
-        <h5 onClick={handleCollapse}>
-          <p>{weaponName}</p>
-        </h5>
-        <hr />
-        <Collapse in={open}>
           <Container>
             <Row>
               <Col>
@@ -50,102 +39,23 @@ const InvWeapons = ({weaponName}) => {
                     <Col sm="4">
                       <Form.Group
                         as={Row}
-                        controlId="formAttack">
+                        controlId="formArmor">
                         <Form.Label
                           column
                           sm="6"
                           className="form-label-custom">
-                          Attack
+                          Armor/Protective item
                         </Form.Label>
                         <Form.Control
                           type="text"
-                          name="attack"
-                          value={weapons.attack}
+                          name="armorname"
+                          value={armor.armorname}
                           onChange={handleInputChange}
-                          placeholder="Name of weapon"
+                          placeholder="Name of armor"
                         />
                       </Form.Group>
                     </Col>
-                    <Col sm="3" xs="5">
-                      <Form.Group
-                        as={Row}
-                        controlId="formBonus">
-                        <Form.Label
-                          column
-                          sm="6"
-                          className="form-label-custom">
-                          Attack Bonus
-                        </Form.Label>
-                        <Form.Control
-                          type="text"
-                          name="bonus"
-                          value={weapons.bonus}
-                          onChange={handleInputChange}
-                          placeholder="ex. '2d10+dex'"
-                        />
-                      </Form.Group>
-                    </Col>
-                    <Col sm="3" xs="4">
-                      <Form.Group
-                        as={Row}
-                        controlId="formDamage">
-                        <Form.Label
-                          column
-                          sm="6"
-                          className="form-label-custom">
-                          Damage
-                        </Form.Label>
-                        <Form.Control
-                          type="text"
-                          name="damage"
-                          value={weapons.damage}
-                          onChange={handleInputChange}
-                          placeholder="ex. '5d6+str'"
-                        />
-                      </Form.Group>
-                    </Col>
-                    <Col sm="2" xs="3">
-                      <Form.Group
-                        as={Row}
-                        controlId="formCritical">
-                        <Form.Label
-                          column
-                          sm="6"
-                          className="form-label-custom">
-                          Critical
-                        </Form.Label>
-                        <Form.Control
-                          type="text"
-                          name="critical"
-                          value={weapons.critical}
-                          onChange={handleInputChange}
-                          placeholder="I forget how :S"
-                        />
-                      </Form.Group>
-                    </Col>
-                  </Row>
-                  {/* ==================== ROW 2 BELOW ==============*/}
-                  <Row>
-                    <Col sm="2" xs="4">
-                      <Form.Group
-                        as={Row}
-                        controlId="formRange">
-                        <Form.Label
-                          column
-                          sm="6"
-                          className="form-label-custom">
-                          Range
-                        </Form.Label>
-                        <Form.Control
-                          type="text"
-                          name="range"
-                          value={weapons.range}
-                          onChange={handleInputChange}
-                          placeholder="ft"
-                        />
-                      </Form.Group>
-                    </Col>
-                    <Col sm="2" xs="4">
+                    <Col sm="3">
                       <Form.Group
                         as={Row}
                         controlId="formType">
@@ -158,71 +68,148 @@ const InvWeapons = ({weaponName}) => {
                         <Form.Control
                           type="text"
                           name="type"
-                          value={weapons.type}
+                          value={armor.armortype}
                           onChange={handleInputChange}
-                          placeholder="ex. 'Slash/Blunt'"
+                          placeholder="ex. light/heavy"
                         />
                       </Form.Group>
                     </Col>
-                    <Col sm="8" xs="4">
+                    <Col sm="3" xs="6">
                       <Form.Group
                         as={Row}
-                        controlId="formNotes">
+                        controlId="formAcBonus">
                         <Form.Label
                           column
                           sm="6"
                           className="form-label-custom">
-                          Notes
+                          AC Bonus
                         </Form.Label>
                         <Form.Control
-                          type="text"
-                          name="critical"
-                          value={weapons.notes}
+                          type="number"
+                          name="acbonus"
+                          value={armor.acbonus}
                           onChange={handleInputChange}
-                          placeholder="ex. 'Cursed 2d10 dmg pr roll'"
+                          placeholder="0"
+                        />
+                      </Form.Group>
+                    </Col>
+                    <Col sm="2" xs="6">
+                      <Form.Group
+                        as={Row}
+                        controlId="formMaxDex">
+                        <Form.Label
+                          column
+                          sm="6"
+                          className="form-label-custom">
+                          Max Dex
+                        </Form.Label>
+                        <Form.Control
+                          type="number"
+                          name="maxdex"
+                          value={armor.maxdex}
+                          onChange={handleInputChange}
+                          placeholder="0"
                         />
                       </Form.Group>
                     </Col>
                   </Row>
-                  {/* ================== ROW 3 BELOW ==============*/}
+                  {/* ==================== ROW 2 BELOW ==============*/}
                   <Row>
-                    <Col sm="6" xs="5">
+                    <Col sm="3" xs="6">
                       <Form.Group
                         as={Row}
-                        controlId="formAmmunition">
+                        controlId="formCheckPenalty">
                         <Form.Label
                           column
-                          sm="12"
+                          sm="6"
                           className="form-label-custom">
-                          Ammunition
+                          Check Penalty
                         </Form.Label>
-                          <Form.Control
-                            type="number"
-                            name="ammunition"
-                            value={weapons.ammunition}
-                            onChange={handleInputChange}
-                            placeholder="Ammo left"
-                            min="0"
-                          />
+                        <Form.Control
+                          type="number"
+                          name="checkpenalty"
+                          value={armor.checkpenalty}
+                          onChange={handleInputChange}
+                          placeholder="0"
+                        />
                       </Form.Group>
                     </Col>
-                    <Col sm="6" xs="7">
+                    <Col sm="3" xs="6">
                       <Form.Group
                         as={Row}
-                        controlId="formAmmunitioncap">
+                        controlId="formSpellFailure">
+                        <Form.Label
+                          column
+                          sm="6"
+                          className="form-label-custom">
+                          Spell Failure
+                        </Form.Label>
+                        <Form.Control
+                          type="text"
+                          name="type"
+                          value={armor.spellfailure}
+                          onChange={handleInputChange}
+                          placeholder="I dunno vOv"
+                        />
+                      </Form.Group>
+                    </Col>
+                    <Col sm="3" xs="6">
+                      <Form.Group
+                        as={Row}
+                        controlId="formSpeed">
+                        <Form.Label
+                          column
+                          sm="6"
+                          className="form-label-custom">
+                          Speed
+                        </Form.Label>
+                        <Form.Control
+                          type="number"
+                          name="critical"
+                          value={armor.speed}
+                          onChange={handleInputChange}
+                          placeholder="0"
+                        />
+                      </Form.Group>
+                    </Col>
+                    <Col sm="3" xs="6">
+                    <Form.Group
+                      as={Row}
+                      controlId="formWeight">
+                      <Form.Label
+                        column
+                        sm="6"
+                        className="form-label-custom">
+                        Weight
+                      </Form.Label>
+                        <Form.Control
+                          type="number"
+                          name="weight"
+                          value={armor.weight}
+                          onChange={handleInputChange}
+                          placeholder="0"
+                        />
+                    </Form.Group>
+                  </Col>
+                  </Row>
+                  {/* ================== ROW 3 BELOW ==============*/}
+                  <Row>
+                    <Col sm="12">
+                      <Form.Group
+                        as={Row}
+                        controlId="formSpecialProperties">
                         <Form.Label
                           column
                           sm="12"
                           className="form-label-custom">
-                          Ammunition Capacity
+                          Special Properties
                         </Form.Label>
                           <Form.Control
-                            type="number"
-                            name="ammunitioncap"
-                            value={weapons.ammunitioncap}
+                            type="text"
+                            name="specialproperties"
+                            value={armor.specialproperties}
                             onChange={handleInputChange}
-                            placeholder="max amount of ammo"
-                            min="0"
+                            placeholder=""
                           />
                       </Form.Group>
                     </Col>
@@ -231,9 +218,10 @@ const InvWeapons = ({weaponName}) => {
               </Col>
             </Row>
           </Container>
-        </Collapse>
       </div>
     </>
   )
 }
-export default InvWeapons
+export default InvArmor
+
+

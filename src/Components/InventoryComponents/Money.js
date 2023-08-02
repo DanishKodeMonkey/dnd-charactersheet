@@ -2,7 +2,7 @@ import React from 'react'
 
 const InvMoney = () => {
     return(
-        <><p><h1>Inventory Money Component</h1></p></>
+        <><h1>Inventory Money Component</h1></>
     )
 }
 export default InvMoney
