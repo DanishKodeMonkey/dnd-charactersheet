@@ -1,13 +1,16 @@
 import React from "react"
-import { Container, Row, Col } from "react-bootstrap"
+import { Container, Row } from "react-bootstrap"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import Navigationbar from "./Components/Navigationbar"
-import Inventory from "./Pages/Inventory"
-import Character from "./Pages/Character"
-import Skills from "./Pages/Skills"
-import Spells from "./Pages/Spells"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./Components/Custom.css"
+import CharacterDetails from "./Pages/Character/CharacterDetails"
+import CharacterStats from "./Pages/Character/CharacterStats.js"
+import InventoryGear from "./Pages/Inventory/InventoryGear"
+import InventoryPossesions from "./Pages/Inventory/InventoryPossesions"
+import SkillsMain from "./Pages/Skills/SkillSkills"
+import SkillAbilities from "./Pages/Skills/SkillAbilities"
+import SpellsMain from "./Pages/Spells/SpellSpells"
 
 const App = () => {
   return (
@@ -20,19 +23,41 @@ const App = () => {
               <Route
                 exact
                 path="/"
-                element={<Character />}
+                element={<CharacterDetails />}
               />
               <Route
-                path="/Inventory"
-                element={<Inventory />}
+                exact
+                path="/character/details"
+                element={<CharacterDetails />}
               />
               <Route
-                path="/Skills"
-                element={<Skills />}
+                exact
+                path="/character/stats"
+                element={<CharacterStats />}
               />
               <Route
-                path="/Spells"
-                element={<Spells />}
+                exact
+                path="/inventory/gear"
+                element={<InventoryGear />}
+              />
+              <Route
+              exact
+              path="/inventory/possesions"
+              element={<InventoryPossesions />}
+            />
+            <Route
+            exact
+            path="/skills/skills"
+            element={<SkillsMain />}
+          />
+          <Route
+          exact
+          path="/skills/abilities"
+          element={<SkillAbilities />}
+        />
+              <Route
+                path="/spells"
+                element={<SpellsMain />}
               />
             </Routes>
           </Row>
