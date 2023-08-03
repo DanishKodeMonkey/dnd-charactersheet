@@ -9,12 +9,33 @@
     padding-bottom: 20px;
   }
   .form-label-custom{
+    color: #ccc;
     border: 1px solid #ccc;
     background-color: #212529;
     padding: 5px 10px;
     border-radius: 5px;
     width: 100%;
   }
+  .form-label-custom-possesions{
+    color: #ccc;
+    border: 1px solid #ccc;
+    background-color: #212529;
+    padding: 5px 0;
+    border-radius: 5px;
+  }
+  .sharp-border-input{
+    border-radius:0;
+  }
   .border-weapons h5, hr{
     color:black;
   }
+
+  .no-gutter{
+    padding-left: 0;
+    padding-right: 0;
+
+  }
+  .no-flex {
+    flex: none;
+  }
+ 
