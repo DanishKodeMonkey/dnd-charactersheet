@@ -35,7 +35,7 @@
     padding-right: 0;
 
   }
-  .no-flex {
-    flex: none;
+  .height-auto {
+    height: 0;
   }
  

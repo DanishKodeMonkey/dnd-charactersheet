@@ -27,6 +27,7 @@ const InvPossesions = () => {
   }
   return (
     <div>
+    <h1>Items</h1>
       {/* Render the "Add Item" button using React-Bootstrap */}
       <p></p>
       <Button

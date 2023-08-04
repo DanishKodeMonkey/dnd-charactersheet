@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Form, Container, Row, Col, Button } from "react-bootstrap"
+import { Form, Container, Row, Col} from "react-bootstrap"
 import './Character.css'
 const Attributes = () => {
   const [attributes, setAttributes] = useState({
