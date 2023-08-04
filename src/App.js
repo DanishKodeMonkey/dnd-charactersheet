@@ -41,20 +41,20 @@ const App = () => {
                 element={<InventoryGear />}
               />
               <Route
-              exact
-              path="/inventory/possesions"
-              element={<InventoryPossesions />}
-            />
-            <Route
-            exact
-            path="/skills/skills"
-            element={<SkillsMain />}
-          />
-          <Route
-          exact
-          path="/skills/abilities"
-          element={<SkillAbilities />}
-        />
+                exact
+                path="/inventory/possesions"
+                element={<InventoryPossesions />}
+              />
+              <Route
+                exact
+                path="/skills/skills"
+                element={<SkillsMain />}
+              />
+              <Route
+                exact
+                path="/skills/abilities"
+                element={<SkillAbilities />}
+              />
               <Route
                 path="/spells"
                 element={<SpellsMain />}
