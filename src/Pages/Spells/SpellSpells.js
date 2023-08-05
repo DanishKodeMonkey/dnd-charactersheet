@@ -1,24 +1,18 @@
 import React from "react"
-import { Container, Row, Col } from "react-bootstrap"
-import SpellSpells from "../../Components/SpellsComponents/Spells"
+import SpellsMain from "../../Components/SpellsComponents/Spells"
 
 
-const SpellsMain = () => {
+const SpellsSpells = () => {
   return (
     <>
     <p></p>
     <h1><p>Character Spells</p></h1>
-      <Container>
-        <Row>
-        <Col>
         <div className="border-component">
-          <SpellSpells />
+          <SpellsMain tier={1}/>
           </div>
-        </Col>
-        </Row>
-      </Container>
+
     </>
   )
 }
 
-export default SpellsMain
+export default SpellsSpells
