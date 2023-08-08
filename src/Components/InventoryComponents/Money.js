@@ -1,14 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import { Form, Container, Row, Col } from "react-bootstrap"
 import "./Inventory.css"
 
-const InvMoney = () => {
-  const [money, setMoney] = useState({
-    copperpieces: "",
-    silverpieces: "",
-    goldpieces: "",
-    platinumpieces: "",
-  })
+const InvMoney = ({money, setMoney}) => {
+
   const handleInputChange = (event) => {
     const { name, value } = event.target
     setMoney((prevAttributes) => ({

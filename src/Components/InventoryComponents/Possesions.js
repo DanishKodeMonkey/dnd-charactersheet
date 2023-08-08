@@ -1,9 +1,8 @@
-import React, { useState } from "react"
+import React from "react"
 import { Button, Form, Container, Row, Col } from "react-bootstrap"
 import "./Inventory.css"
-const InvPossesions = () => {
-  //array of possesions in inventory
-  const [items, setItems] = useState([])
+const InvPossesions = ({items, setItems}) => {
+
 
   //function to handle adding a new item
   const handleAddItem = () => {
