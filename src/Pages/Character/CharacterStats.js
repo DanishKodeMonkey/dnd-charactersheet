@@ -32,11 +32,14 @@ const CharacterStats = () => {
     initiative: "",
   })
   const handleSaveData = () => {
-    // Call a function to send attributes, savingThrows, and status data to DataManagement.js
-    // For now, let's just log them
-    console.log("Attributes Data:", attributes)
-    console.log("Saving Throws Data:", savingThrows)
-    console.log("Status Data:", statusData)
+    // Create the data to send
+    const dataToSend = {
+      attributes: attributes,
+      savingthrows: savingThrows,
+      statusdata: statusData,
+    }
+
+    console.log("Data to send:", dataToSend)
   }
   return (
     <>
@@ -46,12 +49,12 @@ const CharacterStats = () => {
       </h1>
       <Container>
         <Row>
-            <Button
-              variant="primary"
-              onClick={handleSaveData}>
-              Save Character Stats
-            </Button>
-            <p></p>
+          <Button
+            variant="primary"
+            onClick={handleSaveData}>
+            Save Character Stats
+          </Button>
+          <p></p>
           <Col>
             <div className="border-component">
               <Status

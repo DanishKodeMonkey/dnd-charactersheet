@@ -23,9 +23,12 @@ const CharacterDetails = () => {
     hair: "",
   })
   const handleSaveData = () => {
-    // Function to handle saveData
+    // Create the data to send
+    const dataToSend = {
+      characterdetails: characterDetails,
+    }
 
-    console.log("Character Details Data:", characterDetails)
+    console.log("Data to send:", dataToSend)
   }
   return (
     <>
@@ -35,12 +38,12 @@ const CharacterDetails = () => {
       </h1>
       <Container>
         <Row>
-        <Button
-        variant="primary"
-        onClick={handleSaveData}>
-        Save Character Stats
-      </Button>
-      <p></p>
+          <Button
+            variant="primary"
+            onClick={handleSaveData}>
+            Save Character Stats
+          </Button>
+          <p></p>
           <Col>
             <div className="border-component">
               <Details
