@@ -1,18 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import { Form, Container, Row, Col } from "react-bootstrap"
 import "./Character.css"
 
-const Status = () => {
-  //State to hold values of the form fields
-  const [statusData, setStatusData] = useState({
-    hp: "",
-    ac: "",
-    nonLethal: "",
-    flatFooted: "",
-    speed: "",
-    touch: "",
-    initiative: "",
-  })
+const Status = ({statusData, setStatusData}) => {
+
 
   //function to handle changes in the input fields
   const handleInputChange = (event) => {

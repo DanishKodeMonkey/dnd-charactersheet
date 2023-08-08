@@ -1,26 +1,8 @@
-import React, { useState } from "react"
-import { Container, Row, Col, Form, Button } from "react-bootstrap"
+import React from "react"
+import { Container, Row, Col, Form} from "react-bootstrap"
 
-const Details = () => {
-  //State to hold character details
-  const [characterDetails, setCharacterDetails] = useState({
-    name: "",
-    classlevel: "",
-    class: "",
-    careerlevel: "",
-    career: "",
-    race: "",
-    alignment: "",
-    deity: "",
-    size: "",
-    height: "",
-    age: "",
-    weight: "",
-    skin: "",
-    gender: "",
-    eyes: "",
-    hair: "",
-  })
+const Details = ({characterDetails, setCharacterDetails}) => {
+
 
   //Function to handle changes in the input fields
   const handleInputChange = (event) => {
@@ -29,12 +11,6 @@ const Details = () => {
       ...prevDetails,
       [name]: value,
     }))
-  }
-  //function to handle form submission (TODO)
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    //Data to JSON or DB function here
-    console.log("Character details", characterDetails)
   }
 
   return (
@@ -296,17 +272,6 @@ const Details = () => {
               </Form.Group>
             </Col>
           </Row>
-          <p></p>
-          <div style={{ width: "100%" }}>
-            <Button
-              variant="secondary"
-              type="submit"
-              onClick={handleSubmit}
-              size="lg"
-              style={{ width: "100%" }}>
-              Save
-            </Button>
-          </div>
         </Form>
       </Container>
     </>

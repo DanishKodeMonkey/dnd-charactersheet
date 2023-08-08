@@ -1,13 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import { Form, Container, Row, Col} from "react-bootstrap"
 import './Character.css'
 
-const SavingThrows = () => {
-  const [savingThrows, setsavingThrows] = useState({
-    fortitude: "",
-    reflex: "",
-    willpower: "",
-  })
+const SavingThrows = ({savingThrows, setsavingThrows}) => {
+
   const handleInputChange = (event) => {
     const { name, value } = event.target
     setsavingThrows((prevAttributes) => ({

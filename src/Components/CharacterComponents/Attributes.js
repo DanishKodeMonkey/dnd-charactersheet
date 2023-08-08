@@ -1,15 +1,8 @@
-import React, { useState } from "react"
+import React from "react"
 import { Form, Container, Row, Col} from "react-bootstrap"
 import './Character.css'
-const Attributes = () => {
-  const [attributes, setAttributes] = useState({
-    strength: "",
-    dexterity: "",
-    constitution: "",
-    intelligence: "",
-    wisdom: "",
-    charisma: "",
-  })
+const Attributes = ({attributes, setAttributes}) => {
+
   const handleInputChange = (event) => {
     const { name, value } = event.target
     setAttributes((prevAttributes) => ({
@@ -17,6 +10,7 @@ const Attributes = () => {
       [name]: value,
     }))
   }
+
   return (
     <>
     <p></p>
