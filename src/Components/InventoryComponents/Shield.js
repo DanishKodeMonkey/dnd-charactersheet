@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { Form, Container, Row, Col} from "react-bootstrap"
 import "./Inventory.css"
 

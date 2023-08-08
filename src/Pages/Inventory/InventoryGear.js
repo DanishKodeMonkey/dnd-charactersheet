@@ -144,7 +144,7 @@ const InventoryGear = () => {
         <Button
           variant="primary"
           onClick={handleSaveData}>
-          Save Character Stats
+          Save Gear
         </Button>
         <Row>
           <Col>
