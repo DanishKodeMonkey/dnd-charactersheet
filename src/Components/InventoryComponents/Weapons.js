@@ -6,7 +6,7 @@ import "./Inventory.css"
 //Function to handle the collapseability of each weapon in main component
 //Accept weaponName as prop and establish
 
-const InvWeapons = ({weaponName}) => {
+const InvWeapons = ({weaponName, weapons, setWeapons}) => {
     //Collapse function!
   const [open, setOpen] = useState(false)
 
@@ -14,25 +14,16 @@ const InvWeapons = ({weaponName}) => {
     setOpen((prevOpen) => !prevOpen)
   }
 
-  const [weapons, setWeapons] = useState({
-    attack: "",
-    bonus: "",
-    damage: "",
-    critical: "",
-    range: "",
-    type: "",
-    notes: "",
-    ammunition: "",
-    ammunitioncap: "",
-  })
   const handleInputChange = (event) => {
-    const { name, value } = event.target
-    setWeapons((prevAttributes) => ({
-      ...prevAttributes,
-      [name]: value,
-    }))
-  }
-
+    const { name, value } = event.target;
+    setWeapons((prevWeapons) => ({
+      ...prevWeapons,
+      [weaponName]: {
+        ...prevWeapons[weaponName],
+        [name]: value,
+      },
+    }));
+  };
   return (
     <>
       <div className="border-weapons">
@@ -60,7 +51,7 @@ const InvWeapons = ({weaponName}) => {
                         <Form.Control
                           type="text"
                           name="attack"
-                          value={weapons.attack}
+                          value={weapons[weaponName].attack}
                           onChange={handleInputChange}
                           placeholder="Name of weapon"
                         />
@@ -79,7 +70,7 @@ const InvWeapons = ({weaponName}) => {
                         <Form.Control
                           type="text"
                           name="bonus"
-                          value={weapons.bonus}
+                          value={weapons[weaponName].bonus}
                           onChange={handleInputChange}
                           placeholder="ex. '2d10+dex'"
                         />
@@ -98,7 +89,7 @@ const InvWeapons = ({weaponName}) => {
                         <Form.Control
                           type="text"
                           name="damage"
-                          value={weapons.damage}
+                          value={weapons[weaponName].damage}
                           onChange={handleInputChange}
                           placeholder="ex. '5d6+str'"
                         />
@@ -117,7 +108,7 @@ const InvWeapons = ({weaponName}) => {
                         <Form.Control
                           type="text"
                           name="critical"
-                          value={weapons.critical}
+                          value={weapons[weaponName].critical}
                           onChange={handleInputChange}
                           placeholder="I forget how :S"
                         />
@@ -139,7 +130,7 @@ const InvWeapons = ({weaponName}) => {
                         <Form.Control
                           type="text"
                           name="range"
-                          value={weapons.range}
+                          value={weapons[weaponName].range}
                           onChange={handleInputChange}
                           placeholder="ft"
                         />
@@ -158,7 +149,7 @@ const InvWeapons = ({weaponName}) => {
                         <Form.Control
                           type="text"
                           name="type"
-                          value={weapons.type}
+                          value={weapons[weaponName].type}
                           onChange={handleInputChange}
                           placeholder="ex. 'Slash/Blunt'"
                         />
@@ -176,8 +167,8 @@ const InvWeapons = ({weaponName}) => {
                         </Form.Label>
                         <Form.Control
                           type="text"
-                          name="critical"
-                          value={weapons.notes}
+                          name="notes"
+                          value={weapons[weaponName].notes}
                           onChange={handleInputChange}
                           placeholder="ex. 'Cursed 2d10 dmg pr roll'"
                         />
@@ -199,7 +190,7 @@ const InvWeapons = ({weaponName}) => {
                           <Form.Control
                             type="number"
                             name="ammunition"
-                            value={weapons.ammunition}
+                            value={weapons[weaponName].ammunition}
                             onChange={handleInputChange}
                             placeholder="Ammo left"
                             min="0"
@@ -219,7 +210,7 @@ const InvWeapons = ({weaponName}) => {
                           <Form.Control
                             type="number"
                             name="ammunitioncap"
-                            value={weapons.ammunitioncap}
+                            value={weapons[weaponName].ammunitioncap}
                             onChange={handleInputChange}
                             placeholder="max amount of ammo"
                             min="0"

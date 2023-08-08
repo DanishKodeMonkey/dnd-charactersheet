@@ -1,25 +1,23 @@
-import React, { useState } from "react"
+import React from "react"
 import { Form, Container, Row, Col } from "react-bootstrap"
 import "./Inventory.css"
 
 //Function to handle the collapseability of each weapon in main component
 //Accept weaponName as prop and establish
 
-const InvProtItem = () => {
-  const [protitem, setProtItem] = useState({
-    protitemname: "",
-    acbonus: "",
-    weight: "",
-    specialproperties: "",
-  })
-  const handleInputChange = (event) => {
-    const { name, value } = event.target
-    setProtItem((prevAttributes) => ({
-      ...prevAttributes,
-      [name]: value,
-    }))
-  }
+const InvProtItem = ({itemName, protitem, setProtItem}) => {
 
+  
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setProtItem((prevProtItem) => ({
+      ...prevProtItem,
+      [itemName]: {
+        ...prevProtItem[itemName],
+        [name]: value,
+      },
+    }));
+  };
   return (
     <>
       <div className="border-weapons">
@@ -42,7 +40,7 @@ const InvProtItem = () => {
                       <Form.Control
                         type="text"
                         name="protitemname"
-                        value={protitem.protitemname}
+                        value={protitem[itemName].protitemname}
                         onChange={handleInputChange}
                         placeholder="Name of item"
                       />
@@ -61,7 +59,7 @@ const InvProtItem = () => {
                       <Form.Control
                         type="number"
                         name="acbonus"
-                        value={protitem.acbonus}
+                        value={protitem[itemName].acbonus}
                         onChange={handleInputChange}
                         placeholder="0"
                       />
@@ -80,7 +78,7 @@ const InvProtItem = () => {
                       <Form.Control
                         type="number"
                         name="weight"
-                        value={protitem.weight}
+                        value={protitem[itemName].weight}
                         onChange={handleInputChange}
                         placeholder="0"
                       />
@@ -98,8 +96,8 @@ const InvProtItem = () => {
                       </Form.Label>
                       <Form.Control
                         type="text"
-                        name="specialProperties"
-                        value={protitem.specialproperties}
+                        name="specialproperties"
+                        value={protitem[itemName].specialproperties}
                         onChange={handleInputChange}
                         placeholder=""
                       />

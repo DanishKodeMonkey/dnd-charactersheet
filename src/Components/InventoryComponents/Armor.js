@@ -6,18 +6,8 @@ import "./Inventory.css"
 //Function to handle the collapseability of each weapon in main component
 //Accept weaponName as prop and establish
 
-const InvArmor = () => {
-  const [armor, setArmor] = useState({
-    armorname: "",
-    armortype: "",
-    acbonus: "",
-    maxdex: "",
-    checkpenalty: "",
-    spellfailure: "",
-    speed: "",
-    weight: "",
-    specialproperties: "",
-  })
+const InvArmor = ({armor, setArmor}) => {
+
   const handleInputChange = (event) => {
     const { name, value } = event.target
     setArmor((prevAttributes) => ({
@@ -67,7 +57,7 @@ const InvArmor = () => {
                         </Form.Label>
                         <Form.Control
                           type="text"
-                          name="type"
+                          name="armortype"
                           value={armor.armortype}
                           onChange={handleInputChange}
                           placeholder="ex. light/heavy"
@@ -146,7 +136,7 @@ const InvArmor = () => {
                         </Form.Label>
                         <Form.Control
                           type="text"
-                          name="type"
+                          name="spellfailure"
                           value={armor.spellfailure}
                           onChange={handleInputChange}
                           placeholder="I dunno vOv"
@@ -165,7 +155,7 @@ const InvArmor = () => {
                         </Form.Label>
                         <Form.Control
                           type="number"
-                          name="critical"
+                          name="speed"
                           value={armor.speed}
                           onChange={handleInputChange}
                           placeholder="0"
