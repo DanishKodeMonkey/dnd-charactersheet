@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Button, Form, Container, Row, Col } from "react-bootstrap"
 import "./Skills.css"
 
-const SkiLanguage = () => {
+const SkiLanguage = ({ onLanguageDataChange }) => {
   //array of Languages
   const [languages, setLanguages] = useState([])
 
@@ -16,12 +16,20 @@ const SkiLanguage = () => {
     const updatedLanguages = [...languages]
     updatedLanguages[index][field] = value
     setLanguages(updatedLanguages)
+
+    const languageData = updatedLanguages.map((language) => ({
+      language: language.language
+
+    }))
+    onLanguageDataChange(languageData)
   }
   //Function to handle deleting languages
   const handleDeleteLanguage = (index) => {
     const updatedLanguages = [...languages]
     updatedLanguages.splice(index, 1)
     setLanguages(updatedLanguages)
+
+
   }
   return (
     <div>

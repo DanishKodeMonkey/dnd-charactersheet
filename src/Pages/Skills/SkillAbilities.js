@@ -6,6 +6,7 @@ import SkiLanguage from "../../Components/SkillsComponents/Languages"
 const SkillAbilities = () => {
   const [featsData, setFeatsData] = useState({});
   const [abilitiesData, setAbilitiesData] = useState({});
+  const [languageData, setLanguageData] = useState([]);
 
   // Function to handle data from SkillFeatsAbilities
   const handleFeatsAbilitiesData = (data, type) => {
@@ -21,15 +22,20 @@ const SkillAbilities = () => {
       });
     }
   };
+  const handleLanguageData = (data) => {
+    setLanguageData(data);
+  }
   
   // Function to handle saving the data
   const handleSaveData = () => {
     console.log("Current featsData:", featsData);
     console.log("Current abilitiesData:", abilitiesData);
+    console.log("Current languageData:", languageData)
   
     const dataToSend = {
       feats: featsData,
       abilities: abilitiesData,
+      languages: languageData,
     };
     console.log("Data to send to DataManagement.js:", dataToSend);
   };
@@ -71,7 +77,7 @@ const SkillAbilities = () => {
           <p></p>
           <Col>
             <div className="border-component">
-              <SkiLanguage />
+              <SkiLanguage onLanguageDataChange={handleLanguageData}/>
             </div>
           </Col>
         </Row>
