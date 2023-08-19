@@ -29,7 +29,10 @@ const SkiLanguage = ({ onLanguageDataChange }) => {
     updatedLanguages.splice(index, 1)
     setLanguages(updatedLanguages)
 
-
+    const newData = updatedLanguages.map((language) => ({
+      language: language.language,
+    }))
+    onLanguageDataChange(newData);
   }
   return (
     <div>

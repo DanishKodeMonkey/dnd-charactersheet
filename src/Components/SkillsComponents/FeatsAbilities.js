@@ -33,6 +33,14 @@ const FeatsAbilities = ({ title, type, onDataChange }) => {
     const updatedFeats = [...feats]
     updatedFeats.splice(index, 1)
     setFeats(updatedFeats)
+
+    const dataToSend = {
+      [type]: updatedFeats.map((feat) => ({
+        name: feat[`${type}name`],
+        description: feat[`${type}description`],
+      })),
+    }
+    onDataChange(dataToSend, type)
   }
 
   return (

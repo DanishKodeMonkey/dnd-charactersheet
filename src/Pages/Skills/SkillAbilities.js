@@ -11,20 +11,15 @@ const SkillAbilities = () => {
   // Function to handle data from SkillFeatsAbilities
   const handleFeatsAbilitiesData = (data, type) => {
     if (type === "Feat") {
-      setFeatsData((prevData) => {
-        const newData = { ...prevData, ...data };
-        return newData;
-      });
+      setFeatsData(data);
     } else if (type === "Ability") {
-      setAbilitiesData((prevData) => {
-        const newData = { ...prevData, ...data };
-        return newData;
-      });
+      setAbilitiesData(data);
     }
   };
+  
   const handleLanguageData = (data) => {
     setLanguageData(data);
-  }
+  };
   
   // Function to handle saving the data
   const handleSaveData = () => {
