@@ -11,9 +11,9 @@ const SkillAbilities = () => {
   // Function to handle data from SkillFeatsAbilities
   const handleFeatsAbilitiesData = (data, type) => {
     if (type === "Feat") {
-      setFeatsData(data);
+      setFeatsData(data.Feat);
     } else if (type === "Ability") {
-      setAbilitiesData(data);
+      setAbilitiesData(data.Ability);
     }
   };
   
