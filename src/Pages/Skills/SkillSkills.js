@@ -30,7 +30,7 @@ const SkillsMain = () => {
             onClick={handleSaveData}>
             Save Skill List
           </Button>
-
+<p></p>
           <Col
             sm="12"
             xs="12">

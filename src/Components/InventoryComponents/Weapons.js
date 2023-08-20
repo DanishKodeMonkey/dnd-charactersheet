@@ -9,11 +9,11 @@ import "./Inventory.css"
 const InvWeapons = ({weaponName, weapons, setWeapons}) => {
     //Collapse function!
   const [open, setOpen] = useState(false)
-
   const handleCollapse = () => {
     setOpen((prevOpen) => !prevOpen)
   }
-
+  
+    //Handle changes to input fields to pass to parent component.
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setWeapons((prevWeapons) => ({

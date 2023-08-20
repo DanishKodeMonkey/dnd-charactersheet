@@ -1,6 +1,8 @@
 import React from "react"
 import { Row } from "react-bootstrap"
 import "./Skills.css"
+
+//seperate label row for xs mobile screens.
 const SkillRowLabelMobile = () => {
   return (
           <Row className="d-xs-flex d-sm-none form-label-custom-possesions" style={{width:"8.54rem", paddingLeft:"1rem"}}>

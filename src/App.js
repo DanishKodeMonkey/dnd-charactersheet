@@ -12,6 +12,7 @@ import SkillsMain from "./Pages/Skills/SkillSkills"
 import SkillAbilities from "./Pages/Skills/SkillAbilities"
 import SpellsMain from "./Pages/Spells/SpellSpells"
 
+//The front of the webpage, final assembly of all the different pages and parts come together here in the final App render.
 const App = () => {
   return (
     <div className="App">

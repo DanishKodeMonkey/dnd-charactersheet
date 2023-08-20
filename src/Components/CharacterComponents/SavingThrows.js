@@ -4,6 +4,7 @@ import './Character.css'
 
 const SavingThrows = ({savingThrows, setsavingThrows}) => {
 
+  //function to handle input changes to pass to parent component
   const handleInputChange = (event) => {
     const { name, value } = event.target
     setsavingThrows((prevAttributes) => ({

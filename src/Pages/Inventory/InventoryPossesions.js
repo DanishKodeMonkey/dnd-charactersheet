@@ -37,6 +37,7 @@ const InventoryPossesions = () => {
             onClick={handleSaveData}>
             Save Possessions
           </Button>
+          <p></p>
           <Col>
             <div className="border-component">
               <InvPossesions

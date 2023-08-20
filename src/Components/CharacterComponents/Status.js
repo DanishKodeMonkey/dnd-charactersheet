@@ -5,7 +5,7 @@ import "./Character.css"
 const Status = ({statusData, setStatusData}) => {
 
 
-  //function to handle changes in the input fields
+  //function to handle changes in the input fields to pass to parent component
   const handleInputChange = (event) => {
     const { name, value } = event.target
     setStatusData((prevData) => ({

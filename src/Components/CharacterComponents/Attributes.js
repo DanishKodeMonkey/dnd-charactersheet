@@ -3,6 +3,7 @@ import { Form, Container, Row, Col} from "react-bootstrap"
 import './Character.css'
 const Attributes = ({attributes, setAttributes}) => {
 
+  //Function handling changes to pass to parent component
   const handleInputChange = (event) => {
     const { name, value } = event.target
     setAttributes((prevAttributes) => ({

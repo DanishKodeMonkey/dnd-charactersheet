@@ -4,7 +4,7 @@ import { Container, Row, Col, Form} from "react-bootstrap"
 const Details = ({characterDetails, setCharacterDetails}) => {
 
 
-  //Function to handle changes in the input fields
+  //Function to handle changes in input fields to pass to parent component
   const handleInputChange = (event) => {
     const { name, value } = event.target
     setCharacterDetails((prevDetails) => ({

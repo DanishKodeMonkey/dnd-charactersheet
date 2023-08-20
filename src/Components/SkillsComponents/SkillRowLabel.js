@@ -1,6 +1,8 @@
 import React from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import "./Skills.css"
+
+//Seperate Row for labeling the skill list on smaller and bigger screens.
 const SkillRowLabel = () => {
   return (
     <Container>

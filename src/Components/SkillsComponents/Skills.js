@@ -5,6 +5,7 @@ import SkillRowLabel from "./SkillRowLabel"
 import SkillRowLabelMobile from "./SkillRowLabelMobile"
 
 const SkillList = ({ onDataChange }) => {
+  //initial dataset for EVERY, SINGLE, SKILL... in base DnD... 
   const [data, setData] = useState([
     // Initial data for each skill row
     {
@@ -419,7 +420,7 @@ const SkillList = ({ onDataChange }) => {
       <Form>
         <Row>
           <SkillRowLabel />
-
+          {/*Data map to render a row for each index of the initial dataset */}
           {data.map((skill, index) => (
             <React.Fragment key={index}>
               <Col

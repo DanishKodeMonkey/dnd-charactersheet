@@ -47,6 +47,7 @@ const SkillAbilities = () => {
         <Button variant="primary" onClick={handleSaveData}>
         Save Character Abilities and Feats
       </Button>
+      <p></p>
           <Col
             sm="6"
             xs="12">

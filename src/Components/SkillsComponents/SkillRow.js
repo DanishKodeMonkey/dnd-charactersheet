@@ -1,6 +1,9 @@
 import React from "react"
 import { Form, Col, Row, Container } from "react-bootstrap"
 import "./Skills.css"
+
+
+// Component for reusable rendered rows to be used in parent component SkillSkills.js
 const SkillRow = (props) => {
   const {
     classSkill,

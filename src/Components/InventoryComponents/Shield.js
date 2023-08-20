@@ -8,6 +8,7 @@ import "./Inventory.css"
 
 const InvShield = ({shield, setShield}) => {
 
+    //Handle changes to input fields to pass to parent component.
   const handleInputChange = (event) => {
     const { name, value } = event.target
     setShield((prevAttributes) => ({

@@ -16,7 +16,7 @@ const SkiLanguage = ({ onLanguageDataChange }) => {
     const updatedLanguages = [...languages]
     updatedLanguages[index][field] = value
     setLanguages(updatedLanguages)
-
+    //update dataset, send to parent component.
     const languageData = updatedLanguages.map((language) => ({
       language: language.language
 
@@ -28,7 +28,7 @@ const SkiLanguage = ({ onLanguageDataChange }) => {
     const updatedLanguages = [...languages]
     updatedLanguages.splice(index, 1)
     setLanguages(updatedLanguages)
-
+    //Update the dataset, send to parent component.
     const newData = updatedLanguages.map((language) => ({
       language: language.language,
     }))

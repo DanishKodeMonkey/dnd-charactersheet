@@ -3,11 +3,10 @@ import { Form, Container, Row, Col} from "react-bootstrap"
 import "./Inventory.css"
 
 
-//Function to handle the collapseability of each weapon in main component
-//Accept weaponName as prop and establish
 
 const InvArmor = ({armor, setArmor}) => {
-
+  
+  //Handle changes to input fields to pass to parent component.
   const handleInputChange = (event) => {
     const { name, value } = event.target
     setArmor((prevAttributes) => ({

@@ -2,9 +2,10 @@ import React, { useState } from "react"
 import { Button, Form, Container, Row, Col } from "react-bootstrap"
 import "./Skills.css"
 
+//Reusable component that will handle both Feats and Abilities (due to similar datasets) includes passable title, and type for formatting in render.
 const FeatsAbilities = ({ title, type, onDataChange }) => {
   const [feats, setFeats] = useState([])
-
+  //Function for the Add feat button, adds a row immutably
   const handleAddFeat = () => {
     setFeats((prevFeats) => [
       ...prevFeats,
@@ -12,6 +13,7 @@ const FeatsAbilities = ({ title, type, onDataChange }) => {
     ])
   }
 
+  //Function to handle changes to input fields. Send to parent component.
   const handleChange = (index, field, value) => {
     const updatedFeats = [...feats]
     updatedFeats[index][field] = value
@@ -29,11 +31,12 @@ const FeatsAbilities = ({ title, type, onDataChange }) => {
     onDataChange(dataToSend, type)
   }
 
+  //function for deleting a feat. Remove the row from the list.
   const handleDeleteFeat = (index) => {
     const updatedFeats = [...feats]
     updatedFeats.splice(index, 1)
     setFeats(updatedFeats)
-
+    //update the dataset with the removed row. Send to parent component.
     const dataToSend = {
       [type]: updatedFeats.map((feat) => ({
         name: feat[`${type}name`],

@@ -141,11 +141,14 @@ const InventoryGear = () => {
     <>
       <h1>Character Gear</h1>
       <Container>
+      <Row>
         <Button
           variant="primary"
           onClick={handleSaveData}>
           Save Gear
         </Button>
+        <p></p>
+        </Row>
         <Row>
           <Col>
             <div className="border-component">

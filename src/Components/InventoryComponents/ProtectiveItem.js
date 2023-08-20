@@ -7,7 +7,7 @@ import "./Inventory.css"
 
 const InvProtItem = ({itemName, protitem, setProtItem}) => {
 
-  
+    //Handle changes to input fields to pass to parent component.
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setProtItem((prevProtItem) => ({
