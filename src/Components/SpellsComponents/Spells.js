@@ -2,13 +2,13 @@ import React, { useState } from "react"
 import { Button, Form, Container, Row, Col } from "react-bootstrap"
 import "./Spells.css"
 
-const SpellsMain = ({tier}) => {
+const SpellsMain = ({onSpellListChange}) => {
   //array of spells
   const [spells, setSpells] = useState([])
 
   //function to handle adding a new language
   const handleAddSpell = () => {
-    setSpells((prevSpells) => [...prevSpells, { spell:"" }])
+    setSpells((prevSpells) => [...prevSpells, { tier: 0, spell:"" }])
   }
 
   //function to handle changes in the language input fields
@@ -16,17 +16,19 @@ const SpellsMain = ({tier}) => {
     const updatedSpells = [...spells];
     updatedSpells[index][field] = value;
     setSpells(updatedSpells);
+    onSpellListChange(updatedSpells)
   };
   //Function to handle deleting spells
   const handleDeleteSpells = (index) => {
     const updatedSpells = [...spells]
     updatedSpells.splice(index, 1)
     setSpells(updatedSpells)
+    onSpellListChange(updatedSpells)
   }
 
   return (
     <div>
-      <h5>Tier {tier} Spells</h5>
+      <h5>Spells</h5>
       {/* Render the "Add spell" button using React-Bootstrap */}
       <p></p>
       <Button
@@ -38,7 +40,10 @@ const SpellsMain = ({tier}) => {
       {/* Render the label row */}
       <Container>
         <Row className="form-label-custom-possesions no-gutter">
-          <Col xs={12}>
+        <Col xs={6}>
+        <strong>Tier</strong>
+        </Col>
+          <Col xs={6}>
             <strong>Spell</strong>
           </Col>
         </Row>
@@ -50,14 +55,29 @@ const SpellsMain = ({tier}) => {
           <Row
             key={index}
             className="mt-1">
+            <Col sm={1} xs={1} className="no-gutter">
+                        {/* Tier selection dropdown */}
+                        <Form.Select value={spell.tier} onChange={(e) => handleChange(index, "tier", parseInt(e.target.value))}>
+                        <option value={0}>0</option>
+                        <option value={1}>1st</option>
+                        <option value={2}>2nd</option>
+                        <option value={3}>3rd</option>
+                        <option value={4}>4th</option>
+                        <option value={5}>5th</option>
+                        <option value={6}>6th</option>
+                        <option value={7}>7th</option>
+                        <option value={8}>8th</option>
+                        <option value={9}>9th</option>
+                        </Form.Select>
+            </Col>
             <Col
-              sm={11}
-              xs={10}
+              sm={10}
+              xs={8}
               className="no-gutter">
-              {/* Main language description input field */}
+
               <Form.Control
               type="text"
-              value={spell.spell} // Change 'spells.spell' to 'spell.spell'
+              value={spell.spell}
               placeholder="Enter spell"
               onChange={(e) => handleChange(index, "spell", e.target.value)}
             />
