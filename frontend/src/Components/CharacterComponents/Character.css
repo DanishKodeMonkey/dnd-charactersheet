@@ -1,0 +1,17 @@
+/* Attributes.css */
+
+  /* Custom class to increase the font size */
+  .bigger-input {
+    font-size: 35px;
+  }
+  
+  /* Custom class to increase the input field size */
+  .bigger-input input[type="number"] {
+    height: 10px;
+    padding: 5px;
+  }
+  
+  /* Custom class for label text */
+  .label-text {
+    font-size: 22px; /* Adjust the font size as per your preference */
+  }
