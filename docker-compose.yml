@@ -1,0 +1,26 @@
+version: "3"
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+  
+  backend:
+    build: ./backend
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=complicated
+      - MONGO_INITDB_DATABASE=dnd_charactersheet_db
+    networks:
+      - app-network
+
+networks:
+  app-network:
+
+  
