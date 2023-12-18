@@ -1,8 +1,14 @@
 import React, { useState } from "react"
 import { Container, Row, Col, Button } from "react-bootstrap"
 import Details from "../../Components/CharacterComponents/Details"
+import DataManagement from "../../DataManagement"
+
 
 const CharacterDetails = () => {
+
+
+const CharacterDetails = ({dataCharacterDetails}) => {
+
   //State to hold character details
   const [characterDetails, setCharacterDetails] = useState({
     name: "",
@@ -24,11 +30,19 @@ const CharacterDetails = () => {
   })
   const handleSaveData = () => {
     // Create the data to send
+
     const dataToSend = {
       characterdetails: characterDetails,
     }
 
     console.log("Data to send:", dataToSend)
+
+    const dataCharacterDetails = {
+      characterdetails: characterDetails,
+    }
+
+    return dataCharacterDetails
+
   }
   return (
     <>
@@ -54,6 +68,8 @@ const CharacterDetails = () => {
           </Col>
         </Row>
       </Container>
+
+      <DataManagement dataCharacterDetails={dataCharacterDetails} />
     </>
   )
 }
