@@ -73,5 +73,5 @@ const CharacterDetails = ({dataCharacterDetails}) => {
     </>
   )
 }
-
+}
 export default CharacterDetails
