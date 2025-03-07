@@ -1,38 +1,49 @@
-### dnd-charactersheet
-## A react project to manage a personal character sheet digitally when playing the tabletop RPG Dungeons and dragons
-
-The idea came to me during a session of playing Dungeons and Dragons 3.5e with friends, growing increasingly tired
-of writing and erasing, and writing on top of the same piece of paper, causing creases, and low readability.
-That and after the 3rd cup of coffee to spill it got really tiresome to rewrite.
-
-Searching around, most modern webapp solutions to handle characters in a mobile format either focuses around 5e, the newer editions.
-So why not try my hand at creating a lightweight 3.5e character sheet?
-
-### What is this?
-DnD-character sheet uses a react-bootstrap solution for the front end presentation for the user, and management of character data
-as well as a mongoDB backend database to store the characters data in a Json format
-
-Initially i had a interest of diving into the world of frameworks after getting a solid handle on the 
-root elements of web development, HTML, CSS, and Javascript. 
-React-Bootstrap offered a interesting approach to modularising the project, offering a easy approach to structuring,
-and managing individual parts of the projects, without nessecarily breaking everything else. This also allowed for easy
-debugging, as each individual components fail statement would easily point towards the problematic module.
-
-The decision to use a mongoDB backend solution for storing the persistence of character data came from the idea of 
-storing a single characters data on a single file and storing it under a unique ID, creating a loading and saving
-in much a similar way of writing and filling out a real life character sheet. 
-
-Just without all the eraser rubber all over the place.
+### DnD-CharacterSheet: Revolutionizing Your Dungeons and Dragons 3.5e Experience
 
 
-### WIP
+## Overview
+DnD-CharacterSheet is a React project designed to provide a seamless digital solution for managing personal character sheets when playing traditional tabletop Dungeons and Dragons 3.5e. 
 
-The project is still in development, alot of the react-bootstrap work is done, as well as the data handling
+The inspiration for this project arose from the frustration of traditional paper character sheets, with constant writing, erasing, and coffee spills during intense gaming sessions. 
 
-What I still want to do is create a math component in the front end, using javascript to perform the maths of 
-what attributes are linked to what skills and a abilities, and raise/lower associated attributes and stats automatically.
-Like how strength adds to the fortification save rolls, constitution links to health points. ETC.
+Most existing web app solutions focus on newer editions, prompting the creation of a lightweight and efficient 3.5e character sheet.
 
-And in a more permanent persistence I also need to set up a module to format the data arrays currently saved, in a Json format.
-And set up a mongo DB database to store the Jsons for later loading.
-THis would also be where I just realised dockerising the project would be an ideal thing to do.
+### What sets it apart?
+
+DnD-CharacterSheet leverages a React-Bootstrap solution for the front-end presentation and user interface. The management of character data is seamlessly integrated with a MongoDB backend database, storing information in JSON format.
+
+The choice of React-Bootstrap emerged from a desire to explore frameworks after mastering the fundamental elements of web development—HTML, CSS, and JavaScript. React-Bootstrap provided an intriguing approach to modularizing the project, making it easy to structure and manage individual components without compromising the integrity of the entire system. This modular approach enhances debugging, as each component's failure points directly to the problematic module.
+
+The decision to employ MongoDB for backend storage stems from the idea of treating each character's data as a unique file stored under a distinctive ID. This concept mimics the real-life process of writing and filling out a character sheet, minus the inconvenience of eraser rubbings.
+
+## Dockerizing the Project
+
+To ensure seamless deployment and maintain a clean, isolated environment, DnD-CharacterSheet is Dockerized, consisting of separate containers for the front end, back end, and command API component.
+
+### Front-End Container
+
+The front-end container encapsulates the React-Bootstrap solution, ensuring a self-contained and easily deployable unit. This container manages the user interface and presentation, providing a responsive and dynamic experience for players interacting with their digital character sheets.
+
+### Back-End Container
+
+The back-end container hosts the MongoDB database, handling the storage and retrieval of character data in JSON format. Dockerization of the backend ensures efficient management of data persistence while maintaining flexibility for future updates and improvements.
+
+### Data handling API Component Container
+
+A separate container for the command API component enhances scalability and maintainability. This container manages the communication between the front end and back end, facilitating a seamless and secure flow of data between the front-end and back-end services.
+
+Dockerization enhances the project's portability, making it easy for users to deploy DnD-CharacterSheet across different environments without worrying about dependencies or configuration issues.
+
+### Work in Progress (WIP)
+
+While significant progress has been made on the React-Bootstrap front-end and data handling, there are exciting developments still in the pipeline.
+
+1. Front-End Math Component
+
+The project aims to introduce a math component in the front end, utilizing JavaScript to perform calculations based on attribute-skill and attribute-ability relationships. This feature will dynamically adjust associated attributes and stats, mirroring the intricacies of the game mechanics—such as strength contributing to fortification save rolls and constitution linking to health points.
+
+2. Data Formatting and MongoDB Integration
+
+To achieve permanent persistence, a module will be implemented to format the currently saved data arrays into a JSON format. Additionally, a MongoDB database will be set up to store these JSONs for convenient loading and retrieval. The realization of Dockerizing the project has also surfaced, providing an ideal solution for seamless deployment.
+
+DnD-CharacterSheet is an ongoing project committed to enhancing your Dungeons and Dragons 3.5e gaming experience. Stay tuned for updates and features that will elevate your digital character sheet management to new heights. Thank you for joining us on this exciting journey!
