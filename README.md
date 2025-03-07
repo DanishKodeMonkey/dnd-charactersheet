@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ### DnD-CharacterSheet: Revolutionizing Your Dungeons and Dragons 3.5e Experience
+=======
+# DnD-CharacterSheet: Revolutionizing Your Dungeons and Dragons 3.5e Experience
+>>>>>>> 7ed165992c0fc31cbb37817133b1fc11d0ffee30
 
 
 ## Overview
